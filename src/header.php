@@ -40,18 +40,6 @@
 
 				<div class="btn-group" style="padding: 0.6rem 0rem;">
 				
-				<?php if (!get_theme_mod('tainacan_hide_search_input', false)) : ?>
-					<div class="dropdown tainacan-form-dropdown">
-						<button class="btn btn-link text-midnight-blue px-1 dropdown-toggle" type="button" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="tainacan-icon tainacan-icon-search"></i>
-							<i class="tainacan-icon tainacan-icon-close"></i>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<?php get_search_form(); ?>
-						</div>
-					</div>
-				<?php endif; ?>
-
 				</div>
 			</div>
 		</div>
