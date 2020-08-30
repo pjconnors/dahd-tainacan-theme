@@ -26,7 +26,7 @@
         margin-right: -4.1666667%;
         margin-left:  calc(-1 * ((100vw - 100%)/2));
         margin-right: calc(-1 * ((100vw - 100%)/2));
-        margin-top: -2rem;
+        margin-top: -2.0rem;
         position: relative;
         width: 100%;
         width: 100vw;
@@ -920,8 +920,10 @@
 }
 #breadcrumb-single-item-pagination {
     font-size: 0.875rem;
+    height: 1.3rem;
 
     .pagination {
+        margin-bottom: 0;
         padding: 0;
         &:last-child {
             padding: 0 6px;
@@ -937,8 +939,21 @@
 #item-single-navigation {
     flex-wrap: nowrap;
     flex-grow: 2;
+    max-width: 50%;
+
+    @media screen and (max-width: 768px) {
+        & {
+            max-width: 100%;
+        }
+    }
+    @media screen and (max-width: 986px) {
+        & {
+            max-width: 66%;
+        }
+    }
 
     .pagination {
+        max-width: 50%;
         flex-basis: 50%;
         flex-wrap: nowrap;
         align-items: center;
@@ -963,7 +978,7 @@
             margin-left: 0.1rem;
         }
         span {
-            max-width: 50%;
+            max-width: 75%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;

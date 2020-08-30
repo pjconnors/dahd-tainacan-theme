@@ -128,48 +128,144 @@ function tainacan_customize_register( $wp_customize ) {
 		'label' => __( 'Hide search icon and input', 'tainacan-interface' )
 	) );
 
-	// Option to search directly on repository items list
-	$wp_customize->add_setting( 'tainacan_search_on_items', array(
-		'type'       => 'theme_mod',
-		'default'    => false,
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
-	) );
-	$wp_customize->add_control( 'tainacan_search_on_items', array(
-		'type' 		=> 'checkbox',
-		'settings' 	=> 'tainacan_search_on_items',
-		'section' 	=> 'tainacan_header_search',
-		'label'		=> __( 'Display option to search on tainacan items repository list', 'tainacan-interface' )
-	) );
+	if (defined ( 'TAINACAN_VERSION' ) ) {
+		/**
+		 * Adds option to configure the Global search option label.
+		 */
+		$wp_customize->add_setting( 'tainacan_search_global_label', array(
+			'type' 		 => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'default' 	 => __( 'Global', 'tainacan-interface' ),
+			'sanitize_callback'  => 'sanitize_text_field'
+			) );
+		$wp_customize->add_control( 'tainacan_search_global_label', array(
+			'type' 	   	  => 'text',
+			'settings'	  => 'tainacan_search_global_label',
+			'section'  	  => 'tainacan_header_search',
+			'label'    	  => __( 'Label for "Global" search option', 'tainacan-interface' ),
+			'description' => __( 'The Global search is the default. Its option will only be visible if at least one of the bellow are selected.', 'tainacan-interface')
+			) );
+		
+		// Option to search directly on repository items list
+		$wp_customize->add_setting( 'tainacan_search_on_items', array(
+			'type'       => 'theme_mod',
+			'default'    => false,
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
+		) );
+		$wp_customize->add_control( 'tainacan_search_on_items', array(
+			'type' 		=> 'checkbox',
+			'settings' 	=> 'tainacan_search_on_items',
+			'section' 	=> 'tainacan_header_search',
+			'label'		=> __( 'Display option to search on tainacan items repository list', 'tainacan-interface' )
+		) );
 
-	// Option to search directly on collections list
-	$wp_customize->add_setting( 'tainacan_search_on_collections', array(
-		'type'       => 'theme_mod',
-		'default'    => false,
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
-	) );
-	$wp_customize->add_control( 'tainacan_search_on_collections', array(
-		'type' 		=> 'checkbox',
-		'settings' 	=> 'tainacan_search_on_collections',
-		'section' 	=> 'tainacan_header_search',
-		'label'		=> __( 'Display option to search on tainacan collections list', 'tainacan-interface' )
-	) );
+		/**
+		 * Adds option to configure the Items search option label.
+		 */
+		$wp_customize->add_setting( 'tainacan_search_on_items_label', array(
+			'type' 		 => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'default' 	 => __( 'Items', 'tainacan-interface' ),
+			'sanitize_callback'  => 'sanitize_text_field'
+			) );
+		$wp_customize->add_control( 'tainacan_search_on_items_label', array(
+			'type' 	   	  => 'text',
+			'settings'	  => 'tainacan_search_on_items_label',
+			'section'  	  => 'tainacan_header_search',
+			'label'    	  => __( 'Label for the "items" search option', 'tainacan-interface' )
+			) );
 
-	// Option to search globally posts, iem and collections
-	$wp_customize->add_setting( 'tainacan_search_global', array(
-		'type'       => 'theme_mod',
-		'default'    => false,
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
-	) );
-	$wp_customize->add_control( 'tainacan_search_global', array(
-		'type' 		=> 'checkbox',
-		'settings' 	=> 'tainacan_search_global',
-		'section' 	=> 'tainacan_header_search',
-		'label'		=> __( 'Display option to search globally on items, collections and posts', 'tainacan-interface' ),
-		'description'=> __( 'By searching via this mode, the list result will include posts, items and collecitions. You wil be able do distinguish them by a tag next to the title.', 'tainacan-interface' )
-	) );
+		// Option to search directly on collections list
+		$wp_customize->add_setting( 'tainacan_search_on_collections', array(
+			'type'       => 'theme_mod',
+			'default'    => false,
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
+		) );
+		$wp_customize->add_control( 'tainacan_search_on_collections', array(
+			'type' 		=> 'checkbox',
+			'settings' 	=> 'tainacan_search_on_collections',
+			'section' 	=> 'tainacan_header_search',
+			'label'		=> __( 'Display option to search on tainacan collections list', 'tainacan-interface' )
+		) );
+
+		/**
+		 * Adds option to configure the Collections search option label.
+		 */
+		$wp_customize->add_setting( 'tainacan_search_on_collections_label', array(
+			'type' 		 => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'default' 	 => __( 'Collections', 'tainacan-interface' ),
+			'sanitize_callback'  => 'sanitize_text_field'
+			) );
+		$wp_customize->add_control( 'tainacan_search_on_collections_label', array(
+			'type' 	   	  => 'text',
+			'settings'	  => 'tainacan_search_on_collections_label',
+			'section'  	  => 'tainacan_header_search',
+			'label'    	  => __( 'Label for the "Collections" search option', 'tainacan-interface' )
+			) );
+
+		// Option to search on wordpress posts only
+		$wp_customize->add_setting( 'tainacan_search_on_posts', array(
+			'type'       => 'theme_mod',
+			'default'    => false,
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
+		) );
+		$wp_customize->add_control( 'tainacan_search_on_posts', array(
+			'type' 		=> 'checkbox',
+			'settings' 	=> 'tainacan_search_on_posts',
+			'section' 	=> 'tainacan_header_search',
+			'label'		=> __( 'Display option to search only on WordPress posts', 'tainacan-interface' )
+		) );
+
+		/**
+		 * Adds option to configure the Posts search option label.
+		 */
+		$wp_customize->add_setting( 'tainacan_search_on_posts_label', array(
+			'type' 		 => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'default' 	 => __( 'Posts', 'tainacan-interface' ),
+			'sanitize_callback'  => 'sanitize_text_field'
+			) );
+		$wp_customize->add_control( 'tainacan_search_on_posts_label', array(
+			'type' 	   	  => 'text',
+			'settings'	  => 'tainacan_search_on_posts_label',
+			'section'  	  => 'tainacan_header_search',
+			'label'    	  => __( 'Label for the "Posts" search option', 'tainacan-interface' )
+			) );
+
+		// Option to search on wordpress pages only
+		$wp_customize->add_setting( 'tainacan_search_on_pages', array(
+			'type'       => 'theme_mod',
+			'default'    => false,
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'tainacan_callback_sanitize_checkbox',
+		) );
+		$wp_customize->add_control( 'tainacan_search_on_pages', array(
+			'type' 		=> 'checkbox',
+			'settings' 	=> 'tainacan_search_on_pages',
+			'section' 	=> 'tainacan_header_search',
+			'label'		=> __( 'Display option to search only on WordPress pages', 'tainacan-interface' )
+		) );
+
+		/**
+		 * Adds option to configure the Pages search option label.
+		 */
+		$wp_customize->add_setting( 'tainacan_search_on_pages_label', array(
+			'type' 		 => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'default' 	 => __( 'Pages', 'tainacan-interface' ),
+			'sanitize_callback'  => 'sanitize_text_field'
+			) );
+		$wp_customize->add_control( 'tainacan_search_on_pages_label', array(
+			'type' 	   	  => 'text',
+			'settings'	  => 'tainacan_search_on_pages_label',
+			'section'  	  => 'tainacan_header_search',
+			'label'    	  => __( 'Label for the "Pages" search option', 'tainacan-interface' )
+			) );
+	}
 
 	/**
 	 * Social Share Links
@@ -608,7 +704,7 @@ function tainacan_customize_register( $wp_customize ) {
 			'priority' 	  => 2, // Within the section.
 			'section'  	  => 'tainacan_single_item_page',
 			'label'    	  => __( 'Show the item navigation options in the breadcrumb section', 'tainacan-interface' ),
-			'description' => __( 'Toggle to display two and a list icon for navigating directly from the item page breadcrumb section.', 'tainacan-interface' )
+			'description' => __( 'Toggle to display two arrows and a list icon for navigating directly from the item page breadcrumb section.', 'tainacan-interface' )
 			) );
 		$wp_customize->selective_refresh->add_partial( 'tainacan_single_show_hide_navigation_options', array(
 			'selector' => '#breadcrumb-single-item-pagination',

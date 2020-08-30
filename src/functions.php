@@ -1,7 +1,7 @@
 <?php
 
 /** Theme version */
-const TAINACAN_INTERFACE_VERSION = '2.0';
+const TAINACAN_INTERFACE_VERSION = '2.1';
 
 /**
  * Setup Theme
@@ -176,8 +176,8 @@ function tainacan_customize_editor_css() {
 	?>
 	<style>
 		.editor-styles-wrapper { 
-			--tainacan-color-default: <?php echo $color_scheme[2] ?>;
-			--tainacan-block-primary: <?php echo $color_scheme[2] ?>;
+			--tainacan-color-default: <?php echo $default_color == 'default' ? '#298596' : $default_color; ?>;
+			--tainacan-block-primary: <?php echo $default_color == 'default' ? '#298596' : $default_color;?>;
 		}
 	</style>
 	<?php
@@ -191,14 +191,19 @@ add_action( 'admin_head', 'tainacan_customize_editor_css');
  * @param object $query The main WordPress query.
  */
 function tainacan_include_items_in_search_results( $query ) {
-	if ( $_GET['everywhere'] && $query->is_main_query() && $query->is_search() && ! is_admin()) {
+
+	if ( defined ('TAINACAN_VERSION') && $query->get( 'post_type' ) !== 'tainacan-collection' && (!isset($_GET['onlyposts']) || !$_GET['onlyposts']) && (!isset($_GET['onlypages']) || !$_GET['onlypages']) && $query->is_main_query() && $query->is_search() && ! is_admin()) {
 		$collections_post_types = \Tainacan\Repositories\Repository::get_collections_db_identifiers();
 		$existing_post_types = $query->get( 'post_type' );
 
 		if ( !is_array($existing_post_types) )
 			$existing_post_types = [ $existing_post_types ];
 			
-		$query->set( 'post_type', array_merge( $existing_post_types, ['post', 'tainacan-collection'], $collections_post_types ) );
+		$query->set( 'post_type', array_merge( $existing_post_types, ['post', 'page', 'tainacan-collection'], $collections_post_types ) );
+	} else if ( isset($_GET['onlypages']) && $_GET['onlypages'] && $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+		$query->set( 'post_type', 'pages' );
+	} else if ( isset($_GET['onlyposts']) && $_GET['onlyposts'] && $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+		$query->set( 'post_type', 'post' );
 	}
 }
 add_action( 'pre_get_posts', 'tainacan_include_items_in_search_results' );
@@ -262,6 +267,8 @@ add_action( 'widgets_init', 'tainacan_widgets_footer_init' );
 */
 function tainacan_block_patterns_init() {
 	global $wp_version;
+
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 	if ((is_plugin_active('gutenberg/gutenberg.php') || $wp_version >= '5') && function_exists('register_block_pattern_category')) {
 		register_block_pattern_category( 
