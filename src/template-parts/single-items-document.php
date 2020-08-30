@@ -1,4 +1,11 @@
+    <!-- Let's put everything in one row. --> 
+    <div class="row">
+
+    <!-- First column: the images --> 
+    <div class="col"> 
+
 <?php if ( tainacan_has_document() && !get_theme_mod( 'tainacan_single_item_gallery_mode', false )) : ?>
+
     <div class="mt-3 tainacan-single-post">
         <?php if ( get_theme_mod('tainacan_single_item_document_section_label', __( 'Document', 'tainacan-interface' )) != '') : ?>
             <h2 class="title-content-items" id="single-item-document-label">
@@ -17,6 +24,14 @@
         </section>
     </div>
     
-    <div class="my-5 border-bottom border-silver"></div>
-
 <?php endif; ?>
+
+    </div> <!-- End of images column --> 
+
+    <div class="col">
+     Hello world!
+    </div> <!-- End of metadata column --> 
+
+    </div> <!-- End of row --> 
+
+    <div class="my-5 border-bottom border-silver"></div>
