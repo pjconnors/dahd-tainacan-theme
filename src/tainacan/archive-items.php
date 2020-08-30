@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part( 'tainacan/header-collection' ); ?>
 
 	<?php tainacan_the_faceted_search([
 		'default_items_per_page' => get_theme_mod('tainacan_items_page_default_items_per_page', 12),
