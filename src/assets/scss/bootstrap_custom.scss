@@ -30,8 +30,8 @@ $theme-colors: (
   "tundora": $tundora,
   "white-title": $white-title
 );
-$font-family-base: 'Roboto';
-$headings-font-family: 'Roboto';
-$headings-font-weight: 400;
+$font-family-base: 'Source Sans Pro';
+$headings-font-family: 'Source Sans Pro';
+$headings-font-weight: 300;
 
 @import "../vendor/bootstrap/scss/bootstrap";
