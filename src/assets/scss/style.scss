@@ -914,3 +914,9 @@ nav {
 @import "_header-taxonomy";
 
 @import "_lightbox";
+
+// Some customizations
+
+#tainacanFullScreenViewMode { 
+  display: none; // A nasty hack but the configuration option isn't really doing it. 
+} 
