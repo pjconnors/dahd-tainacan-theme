@@ -902,13 +902,14 @@
                     .metadata-type-compound,
                     .metadata-type-textarea {
                         .multivalue-separator {
-                            display: block;
-                            max-height: 1px;
-                            width: 35px;
-                            background: #cbcbcb;
-                            content: none;
-                            color: transparent;
-                            margin: 0.875rem auto;
+                            display: none;
+                            // display: block;
+                            // max-height: 1px;
+                            // width: 35px;
+                            // background: #cbcbcb;
+                            // content: none;
+                            // color: transparent;
+                            // margin: 0.875rem auto;
                         }
                     }
                     .tainacan-compound-group {
