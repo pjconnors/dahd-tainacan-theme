@@ -917,6 +917,10 @@ nav {
 
 // Some customizations
 
-#tainacanFullScreenViewMode { 
-  display: none; // A nasty hack but the configuration option isn't really doing it. 
+#tainacanFullScreenViewMode, #tainacanExposersButton {
+  display: none; // A nasty hack but the configuration option isn't really doing it.
+}
+
+.filters-components-list:first-child { 
+  display: none !important; // Also regrettable but can't find the PHP where this happens. 
 } 
