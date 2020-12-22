@@ -253,7 +253,7 @@ nav {
                 .logo {
                     width: auto;
                     height: auto;
-                    max-width: 225px;
+                    max-width: 255px;
                     max-height: 120px;
                 }
                 @media only screen and (max-width: 576px){
@@ -487,7 +487,7 @@ nav {
         margin-right: 0;
     }
     & > .container-fluid {
-        align-items: flex-end;
+        // align-items: flex-end;
     }
 }
 .navbar.navbar--border-bottom {
