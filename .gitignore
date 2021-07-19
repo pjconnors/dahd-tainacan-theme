@@ -6,3 +6,4 @@ build-config.cfg
 /src/assets/vendor/
 /src/style.css
 /src/vendor/
+node_modules

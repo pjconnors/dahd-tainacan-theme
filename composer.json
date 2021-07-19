@@ -10,7 +10,7 @@
         "fabianobn/slick": "v1.8.*"
     },
     "scripts": {
-        "post-install-cmd": "bash install.sh",
-        "post-update-cmd": "bash install.sh"
+        "post-install-cmd": "bash build.sh",
+        "post-update-cmd": "bash build.sh"
     }
 }
