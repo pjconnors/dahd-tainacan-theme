@@ -135,12 +135,12 @@
                         </div>
                     <?php endif;?>
                     <div class="rotater">
-            <button onclick="copyTextToClipboard('<?php the_permalink();?>')" title="<?php esc_attr_e('Copy link', 'tainacan-interface')?>" class="tainacan-copy-link-button">
-              <div class="btn btn-icon">
-                <i class="tainacan-icon tainacan-icon-url"></i>
-              </div>
-            </button>
-          </div>
+                      <button onclick="copyTextToClipboard('<?php the_permalink();?>')" title="<?php esc_attr_e('Copy link', 'tainacan-interface')?>" class="tainacan-copy-link-button">
+                        <div class="btn btn-icon">
+                          <i class="tainacan-icon tainacan-icon-url"></i>
+                        </div>
+                      </button>
+                    </div>
                 </div>
             </div>
         <?php endif;?>
@@ -167,7 +167,6 @@
             </ul>
         </div>
     </div>
-
 <?php endif;?>
 
 <?php if (get_theme_mod('tainacan_single_item_collection_header', false)): ?>

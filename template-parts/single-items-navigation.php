@@ -1,26 +1,26 @@
 <?php
 
 $adjacent_links = [
-    'next' => '',
-    'previous' => '',
+  'next' => '',
+  'previous' => '',
 ];
 
 switch (get_theme_mod('tainacan_single_item_navigation_options', 'thumbnail_small')) {
-    case 'thumbnail_small':
-        $adjacent_links = tainacan_get_adjacent_item_links('small');
-        break;
-    case 'thumbnail_large':
-        $adjacent_links = tainacan_get_adjacent_item_links('large');
-        break;
-    case 'link':
-        $adjacent_links = tainacan_get_adjacent_item_links();
-        break;
-    case 'none':
-    default:
-        $adjacent_links = [
-            'next' => '',
-            'previous' => '',
-        ];
+  case 'thumbnail_small':
+    $adjacent_links = tainacan_get_adjacent_item_links('small');
+    break;
+  case 'thumbnail_large':
+    $adjacent_links = tainacan_get_adjacent_item_links('large');
+    break;
+  case 'link':
+    $adjacent_links = tainacan_get_adjacent_item_links();
+    break;
+  case 'none':
+  default:
+    $adjacent_links = [
+      'next' => '',
+      'previous' => '',
+    ];
 }
 
 $previous = $adjacent_links['previous'];
