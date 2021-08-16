@@ -3,7 +3,7 @@
 /** Theme version */
 const TAINACAN_INTERFACE_VERSION = '2.2.1';
 
-add_filter( 'http_request_host_is_external', '__return_true' );
+// add_filter( 'http_request_host_is_external', '__return_true' );
 
 /**
  * Setup Theme
