@@ -145,7 +145,7 @@ function tainacan_customize_register( $wp_customize ) {
 			'label'    	  => __( 'Label for "Global" search option', 'tainacan-interface' ),
 			'description' => __( 'The Global search is the default. Its option will only be visible if at least one of the bellow are selected.', 'tainacan-interface')
 			) );
-		
+
 		// Option to search directly on repository items list
 		$wp_customize->add_setting( 'tainacan_search_on_items', array(
 			'type'       => 'theme_mod',
@@ -460,7 +460,7 @@ function tainacan_customize_register( $wp_customize ) {
 	 * Bellow are customizer options exclusivelly related to Tainacan pages.
 	 */
 	if ( defined ( 'TAINACAN_VERSION' ) ) {
-		
+
 		/**
 		 * Adds section to control singe items page.
 		 */
@@ -513,7 +513,7 @@ function tainacan_customize_register( $wp_customize ) {
 				'render_callback' => '__return_false',
 				'fallback_refresh' => true
 				) );
-		
+
 			/**
 			 * Adds option to display attachments and document as a gallery list.
 			 */
@@ -578,7 +578,7 @@ function tainacan_customize_register( $wp_customize ) {
 			'render_callback' => '__return_false',
 			'fallback_refresh' => true
 			) );
-		
+
 		/**
 		 * Adds option to configure Documents section label.
 		 */
@@ -647,7 +647,7 @@ function tainacan_customize_register( $wp_customize ) {
 			'render_callback' => '__return_false',
 			'fallback_refresh' => true
 			) );
-		
+
 		/**
 		 * Adds options to hide attachments file names on carousel.
 		 */
@@ -757,7 +757,7 @@ function tainacan_customize_register( $wp_customize ) {
 
 		/**
 		 * Adds options to display or not share buttons on items page.
-		 */	
+		 */
 		$wp_customize->add_setting( 'tainacan_single_item_display_share_buttons', array(
 			'type' 		 => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -777,7 +777,7 @@ function tainacan_customize_register( $wp_customize ) {
 			'render_callback' => '__return_false',
 			'fallback_refresh' => true
 			) );
-		
+
 		/**
 		 * Adds options to hide or no the core metadada in the metadada list.
 		 */
@@ -896,10 +896,10 @@ function tainacan_customize_register( $wp_customize ) {
 			 */
 			$wp_customize->add_panel( 'tainacan_items_page', array(
 				'title' 	  => __( 'Tainacan items list page', 'tainacan-interface' ),
-				'description' => __( 'Settings related to Tainacan items list pages, such as the repository items list, the colleciton item list and the term items list. Some settings ins this section may be overrided by collection settings or user preference.', 'tainacan-interface' ), 
+				'description' => __( 'Settings related to Tainacan items list pages, such as the repository items list, the colleciton item list and the term items list. Some settings ins this section may be overrided by collection settings or user preference.', 'tainacan-interface' ),
 				'priority' 	  => 160 // Mixed with top-level-section hierarchy.,
 			) );
-				
+
 			/**
 			 * Adds section to settings related to search control . ---------------------------------------------------------
 			 */
@@ -922,7 +922,7 @@ function tainacan_customize_register( $wp_customize ) {
 				'default' 	 => $view_modes['default_view_mode'],
 				'transport'  => 'postMessage',
 				'sanitize_callback' => 'tainacan_sanitize_items_repository_list_default_view_mode'
-				) );	
+				) );
 			$wp_customize->add_control( 'tainacan_items_repository_list_default_view_mode', array(
 				'type' 	   	  => 'select',
 				'priority' 	  => -1, // Within the section.
@@ -936,8 +936,8 @@ function tainacan_customize_register( $wp_customize ) {
 				'render_callback' => '__return_false',
 				'fallback_refresh' => true
 				) );
-			
-			
+
+
 			/**
 			 * Adds option to hide search control on every items list.
 			 */
@@ -960,7 +960,7 @@ function tainacan_customize_register( $wp_customize ) {
 				'render_callback' => '__return_false',
 				'fallback_refresh' => true
 				) );
-			
+
 			/**
 			 * Adds option to hide advanced search link on every items list.
 			 */
@@ -1140,7 +1140,7 @@ function tainacan_customize_register( $wp_customize ) {
 				'label'    	  => __( 'Show Filters button inside the search control bar.', 'tainacan-interface' ),
 				'description' => __( 'Toggle to do display the Filters button inside the search control bar.', 'tainacan-interface' )
 				) );
-				
+
 			/**
 			 * Adds option to start filters hidden by default on every items list.
 			 */
@@ -1212,7 +1212,7 @@ function tainacan_customize_register( $wp_customize ) {
 			 * Adds option to change default value of items per page.
 			 */
 			global $TAINACAN_API_MAX_ITEMS_PER_PAGE;
-		
+
 			$wp_customize->add_setting( 'tainacan_items_page_default_items_per_page', array(
 				'type' 		 => 'theme_mod',
 				'capability' => 'edit_theme_options',
@@ -1249,7 +1249,7 @@ function tainacan_customize_register( $wp_customize ) {
 				'label'    	  => __( 'Hide the "Items per Page" button.', 'tainacan-interface' ),
 				'description' => __( 'Toggle to do not show the "Items per Page" button on the pagination bar.', 'tainacan-interface' )
 				) );
-			
+
 			/**
 			 * Adds option to hide the "Got to Page" button on every items list.
 			 */
@@ -1484,7 +1484,7 @@ function tainacan_get_default_view_mode_choices () {
 		$view_modes = tainacan_get_the_view_modes();
 		$default_view_mode = $view_modes['default_view_mode'];
 		$enabled_view_modes = [];
-		
+
 		foreach ($view_modes['registered_view_modes'] as $key => $view_mode) {
 			if (!$view_mode['full_screen'])
 				$enabled_view_modes[$key] = $view_mode['label'];
@@ -1578,7 +1578,6 @@ if ( ! function_exists( 'tainacan_get_color_scheme_choices' ) ) :
 	}
 endif; // tainacan_get_color_scheme_choices
 
-
 if ( ! function_exists( 'tainacan_sanitize_color_scheme' ) ) :
 	/**
 	 * Handles sanitization for Tainacan Theme color schemes.
@@ -1646,7 +1645,6 @@ if ( ! function_exists( 'tainacan_sanitize_single_item_layout_sections_order' ) 
 	}
 endif; // tainacan_sanitize_single_item_layout_sections_order
 
-
 if ( ! function_exists( 'tainacan_get_footer_color_options' ) ) :
 	/**
 	 * Retrieves an array of options for footer color on Tainacan Theme.
@@ -1690,7 +1688,6 @@ if ( ! function_exists( 'tainacan_sanitize_footer_color_options' ) ) :
 		return $option;
 	}
 endif; // tainacan_sanitize_footer_color_options
-
 
 if ( ! function_exists( 'tainacan_get_single_item_navigation_links_options' ) ) :
 	/**
@@ -1814,8 +1811,8 @@ function tainacan_get_color_scheme_css( $colors ) {
 	$filter = ( has_filter( 'tainacan-customize-css-class' ) ) ? apply_filters( 'tainacan-customize-css-class', $colors ) : '';
 	return <<<CSS
 	/* Color Scheme */
-	
-	.has-default-color { 
+
+	.has-default-color {
 		color: {$colors['tainacan_link_color']} !important;
 	}
 	.has-default-background-color {
@@ -1823,8 +1820,8 @@ function tainacan_get_color_scheme_css( $colors ) {
 	}
 
 	body a,
-	body a:hover, 
-	.tainacan-title-page ul li a:hover, 
+	body a:hover,
+	.tainacan-title-page ul li a:hover,
 	.tainacan-list-post .blog-content h3 ,
 	.tainacan-list-post .blog-content h3 a:hover,
 	#comments .list-comments .media .media-body .comment-reply-link,
@@ -1834,7 +1831,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 	.tainacan-list-post .blog-content h4 {
 		background-color: {$colors['tainacan_tooltip_color']} !important;
 	}
-	.tainacan-title-page ul li, 
+	.tainacan-title-page ul li,
 	.tainacan-title-page ul li a,
 	#menubelowHeader .menu-item a::after,
 	.menu-shadow button[data-toggle='dropdown']::after{
@@ -1859,11 +1856,11 @@ function tainacan_get_color_scheme_css( $colors ) {
 		color: {$colors['tainacan_link_color']} !important;
 	}
 
-	.tainacan-content .wp-block-tainacan-carousel-items-list .swiper-button-prev svg, 
+	.tainacan-content .wp-block-tainacan-carousel-items-list .swiper-button-prev svg,
 	.tainacan-content .wp-block-tainacan-carousel-items-list .swiper-button-next svg,
-	.tainacan-content .wp-block-tainacan-carousel-collections-list .swiper-button-prev svg, 
+	.tainacan-content .wp-block-tainacan-carousel-collections-list .swiper-button-prev svg,
 	.tainacan-content .wp-block-tainacan-carousel-collections-list .swiper-button-next svg,
-	.tainacan-content .wp-block-tainacan-carousel-terms-list .swiper-button-prev svg, 
+	.tainacan-content .wp-block-tainacan-carousel-terms-list .swiper-button-prev svg,
 	.tainacan-content .wp-block-tainacan-carousel-terms-list .swiper-button-next svg {
 		fill: {$colors['tainacan_link_color']} !important;
 	}
@@ -1899,11 +1896,11 @@ function tainacan_get_color_scheme_css( $colors ) {
 	nav.menu-belowheader #menubelowHeader > ul > li.menu-item a:hover::before {
 		background-color: {$colors['tainacan_link_color']};
 	}
-	nav.menu-belowheader #menubelowHeader ul > li.current_page_item > a, 
+	nav.menu-belowheader #menubelowHeader ul > li.current_page_item > a,
 	nav.menu-belowheader #menubelowHeader ul > li.current-menu-item > a {
 		border-color: {$colors['tainacan_link_color']} !important;
 	}
-	nav.menu-belowheader #menubelowHeader ul.show > li.current_page_item > a, 
+	nav.menu-belowheader #menubelowHeader ul.show > li.current_page_item > a,
 	nav.menu-belowheader #menubelowHeader ul.show > li.current-menu-item > a {
 		border-color: {$colors['tainacan_link_color']};
 		background-color: {$colors['backtransparent']};
@@ -1950,7 +1947,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 		border-left-color: {$colors['tainacan_link_color']} !important;
 	}
 
-	/* Separator */ 
+	/* Separator */
     .wp-block-separator:not(.has-background-color) {
 		border-color: {$colors['tainacan_link_color']} !important;
 	}
@@ -1996,7 +1993,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 	/**
 	* Tainacan Collections
 	*/
-	.tainacan-collection-list--simple-search .dropdown #dropdownMenuSorting::after, 
+	.tainacan-collection-list--simple-search .dropdown #dropdownMenuSorting::after,
 	.tainacan-collection-list--simple-search .dropdown #dropdownMenuViewMode::after {
 		color: {$colors['tainacan_link_color']};
 	}
@@ -2010,7 +2007,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 	*/
 	/* Selected Item background ------------------------------------------- */
 	.table-container .table-wrapper table.tainacan-table tbody tr.selected-row,
-	.table-container .table-wrapper table.tainacan-table tbody tr.selected-row .checkbox-cell .checkbox, 
+	.table-container .table-wrapper table.tainacan-table tbody tr.selected-row .checkbox-cell .checkbox,
 	.table-container .table-wrapper table.tainacan-table tbody tr.selected-row .actions-cell .actions-container
 	.tainacan-cards-container .selected-card .metadata-title,
 	.tainacan-records-container .selected-record .metadata-title,
@@ -2055,19 +2052,19 @@ function tainacan_get_color_scheme_css( $colors ) {
 	}
 
 	/* Dropdown Arrow */
-	.theme-items-list .dropdown .dropdown-trigger .button .icon, 
+	.theme-items-list .dropdown .dropdown-trigger .button .icon,
 	.theme-items-list .autocomplete .dropdown-trigger .button .icon {
 		color: {$colors['tainacan_link_color']};
 	}
 
 	/* Dropdown Active Item (for normal dropdown, autocomplete, taginput, etc... */
-	.theme-items-list .dropdown .dropdown-menu .dropdown-content .dropdown-item.is-active, 
-	.theme-items-list .dropdown .dropdown-menu .dropdown-content .has-link a.is-active, 
-	.theme-items-list .dropdown .dropdown-menu .has-link .dropdown-content a.is-active, 
-	.theme-items-list .autocomplete .dropdown-menu .dropdown-content .dropdown-item.is-active, 
-	.theme-items-list .autocomplete .dropdown .dropdown-menu .dropdown-content .has-link a.is-active, 
-	.theme-items-list .dropdown .autocomplete .dropdown-menu .dropdown-content .has-link a.is-active, 
-	.theme-items-list .autocomplete .dropdown .dropdown-menu .has-link .dropdown-content a.is-active, 
+	.theme-items-list .dropdown .dropdown-menu .dropdown-content .dropdown-item.is-active,
+	.theme-items-list .dropdown .dropdown-menu .dropdown-content .has-link a.is-active,
+	.theme-items-list .dropdown .dropdown-menu .has-link .dropdown-content a.is-active,
+	.theme-items-list .autocomplete .dropdown-menu .dropdown-content .dropdown-item.is-active,
+	.theme-items-list .autocomplete .dropdown .dropdown-menu .dropdown-content .has-link a.is-active,
+	.theme-items-list .dropdown .autocomplete .dropdown-menu .dropdown-content .has-link a.is-active,
+	.theme-items-list .autocomplete .dropdown .dropdown-menu .has-link .dropdown-content a.is-active,
 	.theme-items-list .dropdown .autocomplete .dropdown-menu .has-link .dropdown-content a.is-active {
 		background-color: {$colors['backtransparent']};
 	}
@@ -2080,7 +2077,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 	/* Select Arrow */
 	.theme-items-list .select:not(.is-loading)::after,
 	.tainacan-modal-content .select:not(.is-loading)::after,
-	button.link-style, 
+	button.link-style,
 	button.link-style:focus,
 	button.link-style:hover {
 		color: {$colors['tainacan_link_color']} !important;
@@ -2115,8 +2112,8 @@ function tainacan_get_color_scheme_css( $colors ) {
 	}
 
 	/* Pagination icons and links */
-	.theme-items-list .pagination-area .pagination .pagination-link, 
-	.theme-items-list .pagination-area .pagination .pagination-previous, 
+	.theme-items-list .pagination-area .pagination .pagination-link,
+	.theme-items-list .pagination-area .pagination .pagination-previous,
 	.theme-items-list .pagination-area .pagination .pagination-next {
 		color: {$colors['tainacan_link_color']} !important;
 	}
@@ -2125,7 +2122,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 	.theme-items-list .filter-item-forms .datepicker .datepicker-header a>span>i:before,
 	.tainacan-modal-content .filter-item-forms .datepicker .datepicker-header a>span>i:before {
 		color: {$colors['tainacan_link_color']} !important;
-	} 
+	}
 	.theme-items-list .filter-item-forms .datepicker .datepicker-table .datepicker-cell.is-selected,
 	.theme-items-list .filter-item-forms .datepicker .datepicker-table .datepicker-cell.is-selected:hover,
 	.tainacan-modal-content .filter-item-forms .datepicker .datepicker-table .datepicker-cell.is-selected,
@@ -2149,7 +2146,7 @@ function tainacan_get_color_scheme_css( $colors ) {
 
 	/* Colored Button */
 	.theme-items-list .button.is-secondary,
-	.theme-items-list .button.is-secondary:hover, 
+	.theme-items-list .button.is-secondary:hover,
 	.theme-items-list .button.is-secondary:focus {
 		background: {$colors['tainacan_link_color']} !important;
 	}
@@ -2168,18 +2165,18 @@ function tainacan_get_color_scheme_css( $colors ) {
 		color: {$colors['tainacan_link_color']} !important;
 	}
 
-	/* Advanced search criteria title */ 
+	/* Advanced search criteria title */
 	.advanced-search-criteria-title h1,
 	.advanced-search-criteria-title h2 {
 		color: {$colors['tainacan_link_color']} !important;
-	} 
-
-	/* Advanced search results title */ 
-	.advanced-search-results-title h1 { 
-		color: {$colors['tainacan_link_color']} !important; 
 	}
-	.advanced-search-results-title hr { 
-		background-color: {$colors['backtransparent']} !important; 
+
+	/* Advanced search results title */
+	.advanced-search-results-title h1 {
+		color: {$colors['tainacan_link_color']} !important;
+	}
+	.advanced-search-results-title hr {
+		background-color: {$colors['backtransparent']} !important;
 	}
 
 	/* Line above section titles */
@@ -2217,10 +2214,9 @@ function tainacan_get_color_scheme_css( $colors ) {
 	}
 
 	{$filter}
-	
+
 CSS;
 }
-
 
 /**
  * Outputs an Underscore template for generating CSS for the color scheme.
@@ -2265,10 +2261,10 @@ function tainacan_link_color_css() {
 
 	$css = '
 		/* Custom Link Color */
-		body a, 
-		.tainacan-title-page ul li, 
+		body a,
+		.tainacan-title-page ul li,
 		.tainacan-title-page ul li a,
-		.tainacan-title-page ul li a:hover, 
+		.tainacan-title-page ul li a:hover,
 		.tainacan-list-post .blog-content h3 {
 			color: %1$s !important;
 		}
@@ -2336,37 +2332,37 @@ function tainacan_single_item_metadata_columns_count_output() {
 
 	$css = '
 		/* Custom Settings for Single Item Page Metadata Columns Count */
-		
-		@media only screen and (max-width: 768px) { 
-			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {			
+
+		@media only screen and (max-width: 768px) {
+			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {
 				-moz-column-count: 1 !important;
 				-webkit-column-count: 1 !important;
 				column-count: 1 !important;
 			}
 		}
-		@media only screen and (min-width: 769px) and (max-width: 1024px) { 
-			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {			
+		@media only screen and (min-width: 769px) and (max-width: 1024px) {
+			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {
 				-moz-column-count: %1$s !important;
 				-webkit-column-count: %1$s !important;
 				column-count: %1$s !important;
 			}
 		}
 		@media only screen and (min-width: 1025px) and (max-width: 1366px) {
-			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {			
+			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {
 				-moz-column-count: %2$s !important;
 				-webkit-column-count: %2$s !important;
 				column-count: %2$s !important;
 			}
 		}
 		@media only screen and (min-width: 1367px) {
-			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {			
+			.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--information .s-item-collection--metadata {
 				-moz-column-count: %3$s !important;
 				-webkit-column-count: %3$s !important;
 				column-count: %3$s !important;
 			}
 		}
 	';
-	
+
 	echo '<style type="text/css" id="tainacan-style-metadata">' . sprintf( $css, $metadata_columns_count_tablet, $metadata_columns_count_desktop, $metadata_columns_count_wide ) . '</style>';
 }
 add_action( 'wp_head', 'tainacan_single_item_metadata_columns_count_output');
@@ -2380,10 +2376,10 @@ add_action( 'wp_head', 'tainacan_single_item_metadata_columns_count_output');
  */
 function tainacan_items_page_filters_fixed_on_scroll_output() {
 	$should_use_fixed_filters_logic = (version_compare(TAINACAN_VERSION, '0.17RC') >= 0) && get_theme_mod( 'tainacan_items_page_filters_fixed_on_scroll', false );
-	
+
 	if (!$should_use_fixed_filters_logic)
 		return;
-		
+
 	$css = '
 	/* Items list fixed filter logic (Introduced in Tainacan 0.17) */
 	:not(.wp-block-tainacan-faceted-search)>.theme-items-list:not(.is-fullscreen).is-filters-menu-open.is-filters-menu-fixed-at-top .items-list-area {
