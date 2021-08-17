@@ -46,11 +46,9 @@ body.loading-content main > * {
 
 @keyframes spinner-border {
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 }
@@ -67,7 +65,6 @@ body.loading-content main:before {
   border-right-color: transparent;
   border-top-color: transparent;
   border-radius: 50%;
-  -webkit-animation: spinner-border 0.5s linear infinite;
   animation: spinner-border 0.5s linear infinite;
 }
 
@@ -134,42 +131,29 @@ body.loading-content main:before {
 }
 
 #return-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 4.1666666667%;
-  right: 4.1666666667vw;
-  background: black;
-  background: #4ea2ad;
-  width: 36px;
-  height: 36px;
-  display: block;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  z-index: 99;
   animation: appear-from-bottom 0.2s ease;
+  background: #4ea2ad;
+  border-radius: 35px;
+  bottom: 1rem;
+  display: none;
+  height: 36px;
+  position: fixed;
+  right: 3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 36px;
+  z-index: 99;
 }
 #return-to-top:focus, #return-to-top:active {
   outline: none;
 }
 #return-to-top i {
   color: #fff;
+  font-size: 2rem;
+  left: 2px;
   margin: 0;
   position: relative;
-  left: 2px;
   top: -10px;
-  font-size: 2rem;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -2033,30 +2017,6 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
     min-height: 50vh;
   }
 }
-.tainacan-single-post .tainacan-content h1,
-.tainacan-single-post .tainacan-content h2,
-.tainacan-single-post .tainacan-content h3,
-.tainacan-single-post .tainacan-content h5 {
-  font-weight: 600;
-}
-.tainacan-single-post .tainacan-content h4 {
-  font-style: italic;
-}
-.tainacan-single-post .tainacan-content h6 {
-  font-style: 400;
-}
-.tainacan-single-post .tainacan-content h1:not(.has-text-color),
-.tainacan-single-post .tainacan-content h6:not(.has-text-color) {
-  color: #298596;
-}
-.tainacan-single-post .tainacan-content h2:not(.has-text-color),
-.tainacan-single-post .tainacan-content h3:not(.has-text-color),
-.tainacan-single-post .tainacan-content h5:not(.has-text-color) {
-  color: #000;
-}
-.tainacan-single-post .tainacan-content h4:not(.has-text-color) {
-  color: #555758;
-}
 .tainacan-single-post .tainacan-content pre:not(.wp-block-code) {
   color: #555758;
   font-size: 1rem;
@@ -2107,38 +2067,6 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
 }
 .tainacan-single-post .tainacan-content .wp-block-separator.is-style-dots::before {
   font-weight: 600;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading h1:not(.has-huge-font-size):not(.has-large-font-size):not(.has-medium-font-size):not(.has-normal-font-size):not(.has-small-font-size) {
-  font-size: 1.6rem;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading h2:not(.has-huge-font-size):not(.has-large-font-size):not(.has-medium-font-size):not(.has-normal-font-size):not(.has-small-font-size) {
-  font-size: 1.5rem;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading h3:not(.has-huge-font-size):not(.has-large-font-size):not(.has-medium-font-size):not(.has-normal-font-size):not(.has-small-font-size) {
-  font-size: 1.25rem;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading h4:not(.has-huge-font-size):not(.has-large-font-size):not(.has-medium-font-size):not(.has-normal-font-size):not(.has-small-font-size) {
-  font-size: 1.125rem;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading h1:not(.has-text-color),
-.tainacan-single-post .tainacan-content .tainacan-group-heading h2:not(.has-text-color),
-.tainacan-single-post .tainacan-content .tainacan-group-heading h3:not(.has-text-color),
-.tainacan-single-post .tainacan-content .tainacan-group-heading h4:not(.has-text-color) {
-  color: #298596;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading p {
-  font-style: italic;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading p:not(.has-text-color) {
-  color: #898d8f;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading hr.wp-block-separator:not(.is-style-wide) {
-  margin-left: 0;
-  max-width: 200px;
-}
-.tainacan-single-post .tainacan-content .tainacan-group-heading hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-  border-width: 2px;
-  height: 3px;
 }
 .tainacan-single-post .tainacan-content > ul, .tainacan-single-post .tainacan-content > ol {
   font-size: 1rem;
@@ -2192,24 +2120,6 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
 .tainacan-single-post .tainacan-content img[class*=wp-image-],
 .tainacan-single-post .tainacan-content img[class*=attachment-] {
   height: auto;
-}
-.tainacan-single-post .tainacan-content h1,
-.tainacan-single-post .tainacan-content h2,
-.tainacan-single-post .tainacan-content h3,
-.tainacan-single-post .tainacan-content h4,
-.tainacan-single-post .tainacan-content h5,
-.tainacan-single-post .tainacan-content h6 {
-  padding-top: 0.4rem;
-}
-.tainacan-single-post .tainacan-content h1::after,
-.tainacan-single-post .tainacan-content h2::after,
-.tainacan-single-post .tainacan-content h3::after,
-.tainacan-single-post .tainacan-content h4::after,
-.tainacan-single-post .tainacan-content h5::after,
-.tainacan-single-post .tainacan-content h6::after {
-  display: block;
-  clear: both;
-  content: "";
 }
 .tainacan-single-post .tainacan-content .wp-block-columns {
   display: flex;
@@ -2866,6 +2776,54 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   height: 3px;
 }
 
+.tainacan-content h2 {
+  font-size: 2.5rem;
+}
+.tainacan-content h3 {
+  font-size: 2.25rem;
+}
+.tainacan-content h4 {
+  font-size: 2rem;
+}
+.tainacan-content h5 {
+  font-size: 1.75rem;
+}
+.tainacan-content h6 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-style: italic;
+}
+
+h6 {
+  font-style: 400;
+}
+
+h1:not(.has-text-color),
+h6:not(.has-text-color) {
+  color: #298596;
+}
+
+h2:not(.has-text-color),
+h3:not(.has-text-color),
+h5:not(.has-text-color) {
+  color: #000;
+}
+
+h4:not(.has-text-color) {
+  color: #555758;
+}
+
 @media only screen and (min-width: 768px) {
   .sidebar-border {
     border-top: none !important;
@@ -3000,6 +2958,35 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   }
 }
 
+.collection-name {
+  display: none;
+}
+
+.tainacan-cards-container .tainacan-card {
+  box-shadow: 0px 0px 15px -9px rgba(167, 167, 167, 0.5);
+  max-height: 100% !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  padding: 1rem !important;
+}
+.tainacan-cards-container .tainacan-card:hover {
+  box-shadow: 0px 0px 15px -9px rgba(167, 167, 167, 0.1);
+}
+.tainacan-cards-container .tainacan-card img,
+.tainacan-cards-container .tainacan-card canvas {
+  object-fit: contain;
+}
+.tainacan-cards-container .tainacan-card .card-thumbnail {
+  margin-bottom: 1rem;
+}
+.tainacan-cards-container .tainacan-card .metadata-title {
+  margin-bottom: 1rem;
+}
+.tainacan-cards-container .tainacan-card .metadata-title p {
+  font-weight: 700;
+}
+
 .t-bg-collection {
   background-color: #2c2d2d;
   min-height: 150px;
@@ -3015,7 +3002,8 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
     min-height: 96px;
   }
 }
-.t-bg-collection .t-collection--info-img, .t-bg-collection .image-placeholder {
+.t-bg-collection .t-collection--info-img,
+.t-bg-collection .image-placeholder {
   width: calc(16.6666666667% - 8px);
   width: calc(16.6666666667vw - 8px);
   height: calc(16.6666666667% - 8px);
@@ -3027,19 +3015,22 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   background-color: #f2f2f2;
 }
 @media only screen and (max-width: 1526px) {
-  .t-bg-collection .t-collection--info-img, .t-bg-collection .image-placeholder {
+  .t-bg-collection .t-collection--info-img,
+.t-bg-collection .image-placeholder {
     margin-left: 4.1666666667%;
     margin-left: 4.1666666667vw;
   }
 }
 @media only screen and (max-width: 1290px) {
-  .t-bg-collection .t-collection--info-img, .t-bg-collection .image-placeholder {
+  .t-bg-collection .t-collection--info-img,
+.t-bg-collection .image-placeholder {
     bottom: calc(-8.33% + 4px);
     bottom: calc(-8.33vw + 4px);
   }
 }
 @media only screen and (max-width: 767px) {
-  .t-bg-collection .t-collection--info-img, .t-bg-collection .image-placeholder {
+  .t-bg-collection .t-collection--info-img,
+.t-bg-collection .image-placeholder {
     width: calc(25% - 8px);
     width: calc(25vw - 8px);
     height: calc(25% - 8px);
@@ -3049,11 +3040,13 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
     bottom: calc(-12.5% - 4px);
     bottom: calc(-12.5vw - 4px);
   }
-  .t-bg-collection .t-collection--info-img h4, .t-bg-collection .image-placeholder h4 {
+  .t-bg-collection .t-collection--info-img h4,
+.t-bg-collection .image-placeholder h4 {
     font-size: 2.5rem !important;
   }
 }
-.t-bg-collection .t-collection--info-img h4, .t-bg-collection .image-placeholder h4 {
+.t-bg-collection .t-collection--info-img h4,
+.t-bg-collection .image-placeholder h4 {
   font-size: 3rem;
 }
 .t-bg-collection .t-collection--info {
@@ -3103,7 +3096,8 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   min-height: 65px;
   margin-bottom: 1.25rem;
 }
-.t-bg-collection .t-collection--info .t-collection--info-description-text.tainacan-interface-truncate .tainacan-interface-more, .t-bg-collection .t-collection--info .t-collection--info-description-text.tainacan-interface-truncate .tainacan-interface-less {
+.t-bg-collection .t-collection--info .t-collection--info-description-text.tainacan-interface-truncate .tainacan-interface-more,
+.t-bg-collection .t-collection--info .t-collection--info-description-text.tainacan-interface-truncate .tainacan-interface-less {
   color: #cbcbcb;
   white-space: nowrap;
   opacity: 0.75;
@@ -3113,90 +3107,6 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   margin-bottom: 2rem;
 }
 
-/* .collection-header--share {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    right: 0;
-    border-radius: 50%;
-    transition: all 0.5s;
-    margin-right: 4.16666666667%;
-    bottom: 0;
-    .collection-header--share-button {
-        border: none;
-        color: #2c2d2d;
-        background-color: #fff;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        right: 0;
-        height: 30px !important;
-        width: 30px !important;
-        margin-right: 4.16666666667%;
-        position: absolute;
-        bottom: -1rem;
-        &:hover {
-            background-color: #fff;
-        }
-        &:focus{
-            outline:none;
-        }
-    }
-
-    #collection-header--share-button-plus {
-        transition: all 0.5s;
-    }
-
-    #fa-1, #fa-2, #fa-3 {
-        position: absolute;
-        color: #2c2d2d;
-        background-color: #fff;
-        border-radius: 50%;
-        border: none;
-        right: 0;
-        transition: all 0.5s;
-        height: 30px !important;
-        width: 30px !important;
-        margin-right: 4.16666666667%;
-        right: 0;
-        bottom: -1rem;
-    }
-    #fa-1, #fa-2, #fa-3 {
-        &:hover{
-            tansition-delay: 0s;
-            color: #ff8db3;
-        }
-    }
-    &.open {
-        height: 100px;
-        width: 100px;
-        right: 0;
-        .fab {
-            background-color: #fff;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        #plus {
-            -webkit-transform: rotateZ(135deg) translate(-1px, 3px);
-            transform: rotateZ(135deg) translate(-1px, 3px);
-        }
-        #fa-1 {
-            transition-delay: 0s;
-            -webkit-transform: translate(-53px, 10px);
-            transform: translate(-53px, 10px);
-        }
-        #fa-2 {
-            transition-delay: 0.1s;
-            -webkit-transform: translate(-38px, -39px);
-            transform: translate(-38px, -39px);
-        }
-        #fa-3 {
-            transition-delay: 0.2s;
-            -webkit-transform: translate(10px, -53px);
-            transform: translate(10px, -53px);
-        }
-    }
-} */
 .absolute-center, .collection-header--share .btn .tainacan-icon, .collection-header--share {
   position: absolute;
   top: 50%;
