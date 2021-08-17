@@ -50,12 +50,10 @@ body.loading-content main > * {
 
 @keyframes spinner-border {
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 }
@@ -73,7 +71,6 @@ body.loading-content main:before {
   border-right-color: transparent;
   border-top-color: transparent;
   border-radius: 50%;
-  -webkit-animation: spinner-border .5s linear infinite;
   animation: spinner-border .5s linear infinite;
 }
 
@@ -161,27 +158,18 @@ body.loading-content main:before {
 }
 
 #return-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 4.16666666667%;
-  right: 4.16666666667vw;
-  background: rgb(0, 0, 0);
-  background: #4ea2ad;
-  width: 36px;
-  height: 36px;
-  display: block;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  z-index: 99;
   animation: appear-from-bottom 0.2s ease;
+  background: #4ea2ad;
+  border-radius: 35px;
+  bottom: 1rem;
+  display: none;
+  height: 36px;
+  position: fixed;
+  right: 3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 36px;
+  z-index: 99;
 
   &:focus,
   &:active {
@@ -190,15 +178,11 @@ body.loading-content main:before {
 
   i {
     color: #fff;
+    font-size: 2rem;
+    left: 2px;
     margin: 0;
     position: relative;
-    left: 2px;
     top: -10px;
-    font-size: 2rem;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
 }

@@ -8,11 +8,11 @@ command -v npx sass >/dev/null 2>&1 || {
 echo "Compiling Sass..."
 
 # Theme Styles
-npx sass --no-source-map assets/scss/style.scss ./style.css
+npx sass --no-source-map assets/scss/style.scss style.css
 echo "Style of Tainacan Compiled";
 
 # Editor Styles
-npx sass --no-source-map --style=compressed assets/scss/editor-style.scss ./editor-style.css
+npx sass --no-source-map --style=compressed assets/scss/editor-style.scss editor-style.css
 echo "Style of Tainacan for Gutenberg Editor Compiled";
 
 # Vendor Styles
@@ -23,8 +23,8 @@ npx sass --no-source-map --style=compressed assets/vendor/slick/slick.scss      
 npx sass --no-source-map --style=compressed assets/vendor/slick/slick-theme.scss assets/vendor/slick/css/slick-theme.min.css
 echo "Slick for slider carousel Compiled";
 
-# rm -rf *.css.map
-# echo "CSS map files removed";
+rm -rf *.css.map
+echo "CSS map files removed";
 
 echo "Sass compilation Completed!"
 exit 0
