@@ -31,13 +31,13 @@
       </h2>
     <?php endif; ?>
 
-    <section class="tainacan-content single-item-collection">
+    <article class="tainacan-content single-item-collection">
       <?php if (get_theme_mod( 'tainacan_single_item_gallery_mode', false )): ?>
 
         <!-- Large Slide -->
         <div class="single-item-collection--gallery">
           <?php if ( tainacan_has_document() ) : ?>
-            <section class="tainacan-content single-item-collection">
+            <div class="tainacan-content single-item-collection">
               <div class="single-item-collection--document">
                 <?php
                   tainacan_the_document();
@@ -46,22 +46,31 @@
                   }
                 ?>
               </div>
-            </section>
+            </div>
           <?php endif; ?>
 
           <?php foreach ( $attachments as $attachment ) { ?>
-            <section class="tainacan-content single-item-collection">
+            <div class="tainacan-content single-item-collection">
               <div class="single-item-collection--document">
-                <?php
-                  if ( function_exists('tainacan_get_single_attachment_as_html') ) {
-                    tainacan_get_single_attachment_as_html($attachment->ID);
-                  }
-                  if ( !get_theme_mod( 'tainacan_single_item_hide_download_document', false ) && function_exists('tainacan_the_item_attachment_download_link') && tainacan_the_item_attachment_download_link($attachment->ID) != '' ) {
-                    echo '<span class="tainacan-item-file-download">' . tainacan_the_item_attachment_download_link($attachment->ID) . '</span>';
-                  }
-                ?>
+                <figure>
+                  <?php
+                    if ( function_exists('tainacan_get_single_attachment_as_html') ) {
+                      tainacan_get_single_attachment_as_html($attachment->ID);
+                    }
+                    if ( !get_theme_mod( 'tainacan_single_item_hide_download_document', false ) && function_exists('tainacan_the_item_attachment_download_link') && tainacan_the_item_attachment_download_link($attachment->ID) != '' ) {
+                      echo '<span class="tainacan-item-file-download">' . tainacan_the_item_attachment_download_link($attachment->ID) . '</span>';
+                    }
+                  ?>
+                  <figcaption class="document-metadata">
+                    <?php
+                      $caption = $attachment->post_excerpt;
+
+                      echo $caption;
+                    ?>
+                  </figcaption>
+                </figure>
               </div>
-           </section>
+           </div>
           <?php } ?>
         </div>
 
@@ -117,7 +126,7 @@
           <?php } ?>
         </div>
       <?php endif; ?>
-    </section>
+    </article>
   </div>
 
   <div class="my-5 border-bottom border-silver"></div>

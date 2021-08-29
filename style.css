@@ -9,7 +9,6 @@ Tested up to: 5.5.3
 Requires PHP: 5.6
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
-Tags: two-columns, right-sidebar, grid-layout, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, photography, portfolio
 Text Domain: tainacan-interface
 */
 body {
@@ -2336,14 +2335,15 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   align-items: center;
 }
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--document {
-  position: relative;
+  align-items: center;
   color: black;
+  display: flex;
+  flex-flow: column wrap;
   font-size: 0.875rem;
   font-weight: 400;
-  display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 10vh;
+  position: relative;
 }
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--document:hover .tainacan-item-file-download {
   opacity: 1;
@@ -2378,6 +2378,9 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
   left: 0;
   right: 0;
   bottom: 0;
+}
+.tainacan-single-post .tainacan-content.single-item-collection .document-metadata {
+  padding: 1em 0;
 }
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--attachments-prev,
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--attachments-next {
@@ -2445,9 +2448,6 @@ nav[aria-label=breadcrumb] .breadcrumb-item + .breadcrumb-item:before {
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--gallery .tainacan-content iframe {
   min-height: 200px;
   height: 60vh;
-}
-.tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--gallery .slick-slide {
-  max-height: 60vh;
 }
 .tainacan-single-post .tainacan-content.single-item-collection .single-item-collection--gallery .single-item-collection--attachments-next .tainacan-icon-arrowright::before {
   content: "next";
